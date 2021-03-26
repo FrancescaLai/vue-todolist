@@ -11,8 +11,19 @@
 <body>
 
 
+  <div id="todo-list">
 
+    <ol v-if="lista.length > 0">
+      <li v-for="(item, index) in lista">{{item}}<span @click="deleteItem(index)">X</span></li>
+    </ol>
 
-  <script src="js.script.js" charset="utf-8"></script>
+    <div>
+      <input type="text" placeholder="Inserisci elemento" v-model="newItem" @keyup.13="addItem">
+      <button @click="addItem">Aggiungi</button>
+    </div>
+
+  </div>
+
+  <script src="js/script.js" charset="utf-8"></script>
 </body>
 </html>
